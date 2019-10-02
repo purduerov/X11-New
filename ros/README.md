@@ -7,3 +7,5 @@
 If it's not, and you use the command that forwards the text printout to a log file (has `&`'s in it, will print when you log into the Pi if ROSCORE isn't already running), view the log file for the command. It should be of a format of `http://<pi's address>:11311`
 
 You may also find it's slightly more reliable to get ROS launched first on the Pi, and then on the laptop, but difinitive testing on that hasn't been made/consistent just yet. Try that if you have issues.
+
+Run "catkin_make" from the ros folder before trying to use it

@@ -415,8 +415,8 @@ def test(args):
     else:
         print_color("\nPassed all tests!", color="green")
 
-def updatepacket(args=None):
-    subprocess.call(["cp", os.path.join(CORE_DIR,"surface/frontend/src/packets.json"),os.path.join(CORE_DIR,"rov/")])
+#def updatepacket(args=None):
+#    subprocess.call(["cp", os.path.join(CORE_DIR,"surface/frontend/src/packets.json"),os.path.join(CORE_DIR,"rov/")])
 
 
 def usage(args=None):
@@ -443,11 +443,13 @@ def usage(args=None):
     print "   files:    optional list of files to test"
     print "   --pep8:   Run pep8 test"
     print "   --pylint: Run pylint test"
-    print "scotty updaterovpacket"
-    print "    Updates the dearclient packet that the rov sends to the client"
+    #print "scotty updaterovpacket"
+    #print "    Updates the dearclient packet that the rov sends to the client"
     print ""
     print "scotty [-h] [--help]"
     print "   Display this help information"
+    print ""
+    print "Slack Eric Sibley once panic sets in"
 
 
 def main():

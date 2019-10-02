@@ -1,17 +1,18 @@
 # Use an official Python
 FROM resin/raspberrypi3-python
 
-# Set workdit to /app
-WORKDIR /rov
+# Set workdir to /app
+WORKDIR /ros
 
-#copy current directoyr contents into app
-ADD . /rov
+#copy current directory contents into app
+COPY . /ros
 
 # install any needed packages specified in requirements
-RUN sudo ./scotty install --pi
+#RUN sudo ./scotty install --pi         depreciated
 
-# Make oirt 80 available to the outside world throught this container
+# Make port 80 available to the outside world throught this container
 EXPOSE 80
 
 # Run app.py when container launches
-CMD ["sudo","./scotty","run","--pi"]
+#CMD ["sudo","./scotty","run","--pi"]       depreciated
+CMD ["./piros.sh"]
