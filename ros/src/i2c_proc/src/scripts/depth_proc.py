@@ -9,7 +9,7 @@ def message_received(msg):
   pass
 
 if __name__ == "__main__":
-  
+  rospy.init_node('depth_proc')
   depth_sensor = None
   try:
   	depth_sensor = ms5837.MS5837(1) # Initialize sensor on i2c bus 1
@@ -20,13 +20,13 @@ if __name__ == "__main__":
   
   pub = rospy.Publisher('depth',
     Float32, queue_size=10);
-
+  
   rate = rospy.Rate(10) # 10hz
   # TODO: I2C related activities
   while not rospy.is_shutdown():
-    if depth_sensor:
+    try:
     	depth = sensor.depth()
-    else:
+    except:
 	depth = 0
     pub.publish(Float32(depth))
     rate.sleep()
