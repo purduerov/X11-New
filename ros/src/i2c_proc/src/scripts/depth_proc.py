@@ -10,6 +10,7 @@ def message_received(msg):
 
 if __name__ == "__main__":
   rospy.init_node('depth_proc')
+
   depth_sensor = None
   try:
   	depth_sensor = ms5837.MS5837(1) # Initialize sensor on i2c bus 1
